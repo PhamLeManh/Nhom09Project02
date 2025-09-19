@@ -1,0 +1,95 @@
+﻿@model IEnumerable<MdpProject.Models.MdpPc>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MdpTenPc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MdpCpu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MdpGpu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MdpRam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MdpStorage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MdpMainboard)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MdpPsu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MdpCaseType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MdpCreatedAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MdpUpdatedAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MdpSanPham)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MdpTenPc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MdpCpu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MdpGpu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MdpRam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MdpStorage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MdpMainboard)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MdpPsu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MdpCaseType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MdpCreatedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MdpUpdatedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MdpSanPham.MdpSanPhamId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MdpPcid">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MdpPcid">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MdpPcid">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

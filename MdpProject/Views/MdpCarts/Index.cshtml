@@ -1,0 +1,53 @@
+﻿@model IEnumerable<MdpProject.Models.MdpCart>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MdpSoLuong)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MdpNgayThem)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MdpUser)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MdpVariant)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MdpSoLuong)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MdpNgayThem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MdpUser.MdpUserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MdpVariant.MdpVariantId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MdpCartId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MdpCartId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MdpCartId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
