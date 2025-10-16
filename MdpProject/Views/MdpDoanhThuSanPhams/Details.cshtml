@@ -1,0 +1,54 @@
+﻿@model MdpProject.Models.MdpDoanhThuSanPham
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>MdpDoanhThuSanPham</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MdpTongSoLuongBan)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MdpTongSoLuongBan)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MdpTongDoanhThu)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MdpTongDoanhThu)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MdpThang)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MdpThang)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MdpNam)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MdpNam)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MdpSanPham)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MdpSanPham.MdpSanPhamId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MdpVariant)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MdpVariant.MdpVariantId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.MdpDoanhThuId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

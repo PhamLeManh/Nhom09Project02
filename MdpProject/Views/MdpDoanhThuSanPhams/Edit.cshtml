@@ -1,0 +1,59 @@
+﻿@model MdpProject.Models.MdpDoanhThuSanPham
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>MdpDoanhThuSanPham</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="MdpDoanhThuId" />
+            <div class="form-group">
+                <label asp-for="MdpSanPhamId" class="control-label"></label>
+                <select asp-for="MdpSanPhamId" class="form-control" asp-items="ViewBag.MdpSanPhamId"></select>
+                <span asp-validation-for="MdpSanPhamId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MdpVariantId" class="control-label"></label>
+                <select asp-for="MdpVariantId" class="form-control" asp-items="ViewBag.MdpVariantId"></select>
+                <span asp-validation-for="MdpVariantId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MdpTongSoLuongBan" class="control-label"></label>
+                <input asp-for="MdpTongSoLuongBan" class="form-control" />
+                <span asp-validation-for="MdpTongSoLuongBan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MdpTongDoanhThu" class="control-label"></label>
+                <input asp-for="MdpTongDoanhThu" class="form-control" />
+                <span asp-validation-for="MdpTongDoanhThu" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MdpThang" class="control-label"></label>
+                <input asp-for="MdpThang" class="form-control" />
+                <span asp-validation-for="MdpThang" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MdpNam" class="control-label"></label>
+                <input asp-for="MdpNam" class="form-control" />
+                <span asp-validation-for="MdpNam" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
